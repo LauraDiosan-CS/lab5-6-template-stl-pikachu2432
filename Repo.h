@@ -65,7 +65,7 @@ void Repo<T>::upd_elem(const T& e1, const T& e2)
 	for (T crt : elem)
 	{
 		if (crt == e1)
-			e1 = e2; //eroare
+			e1 = e2; 
 		i++;
 	}
 }
