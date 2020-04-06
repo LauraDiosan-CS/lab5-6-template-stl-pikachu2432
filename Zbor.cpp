@@ -48,6 +48,10 @@ void Zbor::set_loc(int d)
 }
 void Zbor::set_nume(char *n)
 {
+	if (this->nume != NULL)
+	{
+		delete[]this->nume;
+	}
 	this->nume = new char[strlen(n) + 1];
 	strcpy_s(this->nume, strlen(n) + 1, n);
 }
@@ -63,4 +67,10 @@ Zbor& Zbor::operator=(const Zbor& e)
 bool Zbor::operator==(const Zbor& rhs) const
 {
 	return (zbor == rhs.zbor) && (loc == rhs.loc) && (nume == rhs.nume);
+}
+
+ostream& operator<<(ostream &os, Zbor &z) 
+{
+	os << z.get_zbor() << " " << z.get_loc() << ""<< z.get_nume() << endl;
+	return os;
 }
