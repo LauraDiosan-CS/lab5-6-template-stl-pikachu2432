@@ -9,6 +9,7 @@ int main()
 {
 	test_z();
 	test_r();
+	test_s();
 	UI u;
 	u.start();
 	return 0;

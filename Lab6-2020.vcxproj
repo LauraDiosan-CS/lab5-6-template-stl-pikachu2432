@@ -125,12 +125,16 @@
   <ItemGroup>
     <ClCompile Include="app.cpp" />
     <ClCompile Include="Repo.cpp" />
+    <ClCompile Include="RepoFile.cpp" />
+    <ClCompile Include="Service.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="Zbor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Repo.h" />
+    <ClInclude Include="RepoFile.h" />
+    <ClInclude Include="Service.h" />
     <ClInclude Include="Test.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="Zbor.h" />
