@@ -36,7 +36,7 @@ void test_r()
 	assert(r.get_size() == 3);
 
 	Zbor zb(3, 19, "eva");
-	r.upd_elem(z2, zb);
+	r.upd_elem(z2, 9, 21, "radu");
 
 	assert(r.find_elem(zb) == 1);
 	assert(r.find_elem(z2) == -1);
@@ -57,8 +57,6 @@ void test_s()
 	assert(s.find_zbor(4, 5, "mara") == -1);
 	
 	s.upd_zbor(1, 3, 2, 19, "ana", "eva");
-
-	s.modif_rez(10, 15, "ion");
 
 	cout << "Testele pentru clasa Service functioneaza." << endl;
 }

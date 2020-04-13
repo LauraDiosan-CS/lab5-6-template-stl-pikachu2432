@@ -20,6 +20,7 @@ public:
 	int find_zbor(int z, int l, const char* n);
 	void upd_zbor(int z1, int z2, int l1, int l2, const char* n1, const char* n2);
 
-	void modif_rez(int z, int l, const char* n);
+	void rez_zbor();
+	void modif_rez();
 };
 

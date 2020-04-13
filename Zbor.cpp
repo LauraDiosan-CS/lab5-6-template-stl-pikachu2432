@@ -69,8 +69,27 @@ bool Zbor::operator==(const Zbor& rhs) const
 	return (zbor == rhs.zbor) && (loc == rhs.loc) && (nume == rhs.nume);
 }
 
-ostream& operator<<(ostream &os, Zbor &z) 
+ostream& operator<<(ostream& os, Zbor& zb) 
 {
-	os << z.get_zbor() << " " << z.get_loc() << ""<< z.get_nume() << endl;
+	os << " " << zb.zbor << " " << zb.loc << " " << zb.nume << endl;
 	return os;
+}
+
+istream& operator>>(istream&is, Zbor& z) 
+{
+	cout << "Introduceti nr. zborului: ";
+	int zb;
+	is >> zb;
+	cout << "Introduceti locul:";
+	int l;
+	is >> l;
+	cout << "Introduceti numele: ";
+	char* nume = new char[10];
+	is >> nume;
+
+	z.set_loc(l);
+	z.set_zbor(zb);
+	z.set_nume(nume);
+	delete[] nume;
+	return is;
 }

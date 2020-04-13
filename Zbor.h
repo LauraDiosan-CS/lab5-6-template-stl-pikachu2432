@@ -24,5 +24,8 @@ public:
 	Zbor& operator=(const Zbor& z);
 
 	bool operator==(const Zbor& z) const;
+
+	friend ostream& operator<<(ostream&, Zbor&);
+	friend istream& operator>>(istream&, Zbor&);
 };
 

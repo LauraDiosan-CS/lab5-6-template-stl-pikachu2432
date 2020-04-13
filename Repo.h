@@ -17,7 +17,10 @@ public:
 	void add_elem(const T&);
 	void elim_elem(const T&);
 	int find_elem(const T&);
-	void upd_elem(const T& e1, const T& e2);
+	//void upd_elem(const T& e1, const T& e2);
+	void upd_elem(const T& e1, int zb, int l, const char* n);
+
+	Zbor get_elem(int i);
 };
 
 template<class T>
@@ -59,6 +62,29 @@ int Repo<T>::find_elem(const T &e)
 }
 
 template<class T>
+Zbor Repo<T>::get_elem(int i)
+{
+	list<Zbor>::iterator it;
+	it = elem.begin();
+	advance(it, 4);
+	return *it;
+}
+
+template <class T> 
+void Repo<T>::upd_elem(const T& e1, int zb, int l, const char* n)
+{
+	list<Zbor>::iterator it;
+	it = find(elem.begin(), elem.end(), e1);
+	
+	if (it != elem.end())
+	{
+		(*it).set_zbor(zb);
+		(*it).set_loc(l);
+		//(*it).set_nume(n);
+	}
+}
+/*
+template<class T>
 void Repo<T>::upd_elem(const T& e1, const T& e2)
 {
 	int i = 0;
@@ -68,4 +94,4 @@ void Repo<T>::upd_elem(const T& e1, const T& e2)
 			e1 = e2; 
 		i++;
 	}
-}
+}*/

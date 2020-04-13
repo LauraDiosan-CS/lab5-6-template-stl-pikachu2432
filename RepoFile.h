@@ -2,25 +2,26 @@
 #include <fstream>
 #include "Repo.h"
 
-
-
 template <class T>
 class RepoFile : public Repo <T>
 {
 private:
 	list<T> elem;
-	ifstream fin("Zboruri.in");
-	ofstream fout("Zboruri.out");
+	
 public:
-	RepoFile():Repo() {}
-	~RepoFile() {}
-
 	void loadFromFile();
+	void saveToFile();
 };
 
 template<class T>
 void RepoFile<T>::loadFromFile()
 {
+	ifstream fin("Zboruri.in");
+
+	int zb, l;
+	char* n = new char[10];
+
+	elem.clear();
 	while (!fin.eof()) 
 	{
 		fin >> zb >> l >> n;
@@ -32,4 +33,15 @@ void RepoFile<T>::loadFromFile()
 	}
 	delete[] n;
 	fin.close();
+}
+
+template<class T>
+void RepoFile<T>::saveToFile()
+{
+	ofstream fout("Zboruri.out");
+	for (int i = 0; i < elem.size(); i++)
+	{
+		fout << elem[i];
+	}
+	fout.close();
 }
